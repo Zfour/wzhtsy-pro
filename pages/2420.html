@@ -640,6 +640,7 @@
 	 </div>	
        
       
+
 <script language="javascript">
 function doAction(actionID)
 {
@@ -668,50 +669,631 @@ function doAction(actionID)
         NewWnd.opener = document.window;
 		break;
 	
-	
-	 case "pageFeeEdit": 
-	     if(isSelect()==false)
-	   {
-        alert("请选择一篇论文!");
-        break;
-	   }		 
- 	 	 		a=0;
-        for(i=0;i<document.forms[0].CHECKID.length;i++)
-          if(document.forms[0].CHECKID[i].checked==true)
-          a++;
-        if (a>1)  	
-        {alert("对不起，您只能选择一篇文章! ") ;
-        	break;  
-        }  
-        document.searchForm.action="editpaper.do?flag=togetpagefee1";
- 	 	document.searchForm.submit();
-		break;
-	
    case "search": 
         if(document.searchForm.CURRENT_PAGE.value<1)
 		document.searchForm.CURRENT_PAGE.value="1";
 	    document.searchForm.BUTTON_FLAG.value="search";
  	 	document.searchForm.submit();
  	 	break;
+ 	 	
+    case "del": 
+ 	   if(isSelect()==false)
+	   {
+        alert("请选择要删除的论文!");
+        break;
+	   }	
+  	 	if(confirm("确定要删除吗?")==true)
+	  {
+	    document.searchForm.action="editpaper.do?flag=delete";
+ 	 	document.searchForm.submit();
+	  }
+ 	 	break;
+ 	 	
+    case "new": 
+	       document.searchForm.action="editpaper.do?flag=new&type=1";
+ 	 	document.searchForm.submit();
+		break;
+		
+    case "tomodify3": 
+		if(isSelect()==false)
+	   {
+        alert("请选择要编辑的论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+ 	 	 
+        document.searchForm.action="editpaper.do?flag=modify3";
+ 	 	document.searchForm.submit();
+		break;
 
-	case "newTask":
-	  
-        var url = "openTask.do?PathID=new";
-			var NewWnd = window.open(url,'iFDMS','left=150,top=100,location=no,width=550,height=350","toolbar=no,memubar=no,scrollbars=yes,status=no,resizable=yes');  
-		if ((document.window != null) && (!NewWnd.opener))
-			   NewWnd.opener = document.window;
+    case "modifypaper": 
+		if(isSelect()==false)
+	   {
+        alert("请选择要编辑的论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+ 	 	 
+        document.searchForm.action="editpaper.do?flag=modifypaper";
+ 	 	document.searchForm.submit();
+		break;
+
+    case "modifypaper26": 
+		if(isSelect()==false)
+	   {
+        alert("请选择要编辑的论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+ 	 	 
+        document.searchForm.action="editpaper.do?flag=modifypaper26";
+ 	 	document.searchForm.submit();
+		break;
+
+    case "shus": 
+		if(isSelect()==false)
+	   {
+        alert("请选择要送审的论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+        document.searchForm.action="editpaper.do?flag=shus&type=1";
+ 	 	document.searchForm.submit();
+		break;
+	   case "printssd": 
+		if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true){
+          a++;
+        
+          }
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 
+//       var url = "editpaper.do?flag=printssd&CHECKID="+cheid;
+//	     window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=no,scrollbars=yes,status=no,resizable=no');
+//       if ((document.window != null) && (!NewWnd.opener))
+//       NewWnd.opener = document.window;
+        	
+	    document.searchForm.action="editpaper.do?flag=printssd";
+	 	document.searchForm.submit();
+		break;	
+   case "toread":       
+		if(isSelect()==false)
+	   {
+        alert("请选择要送审的论文!");
+        break;
+	   }	
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+        document.searchForm.action="editpaper.do?flag=toread&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;
+ 
+   case "toread1": 
+       if(isSelect()==false) 
+	   {
+        alert("请选择要送审的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=toread1&type=4";
+ 	 	document.searchForm.submit();
+		break;
+		
+   case "toread2": 
+       if(isSelect()==false) 
+	   {
+        alert("请选择要送审的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=toread1&type=5";
+ 	 	document.searchForm.submit();
+		break;
+		
+   case "toread3": 
+       if(isSelect()==false) 
+	   {
+        alert("请选择要送审的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=toread1&type=8";
+ 	 	document.searchForm.submit();
+		break;	
+		
+   case "toread4": 
+        if(isSelect()==false) 
+	   {
+        alert("请选择要送审的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=toread1&type=14";
+ 	 	document.searchForm.submit();
+		break;	 
+   
+    case "selectreader1": 
+        if(isSelect()==false) 
+	   {
+        alert("请选择要操作的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=selectreader&type=4";
+ 	 	document.searchForm.submit();
+		break;
+	
+	case "selectreader2": 
+        if(isSelect()==false) 
+	   {
+        alert("请选择要操作的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=selectreader&type=5";
+ 	 	document.searchForm.submit();
+		break;
+		
+	case "selectreader3": 
+        if(isSelect()==false) 
+	   {
+        alert("请选择要操作的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=selectreader&type=8";
+ 	 	document.searchForm.submit();
+		break;
+		
+	case "selectreader4": 
+        if(isSelect()==false) 
+	   {
+        alert("请选择要操作的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=selectreader&type=14";
+ 	 	document.searchForm.submit();
+		break;	
+		
+	case "readerpass": 
+        if(isSelect()==false) 
+	   {
+        alert("请选择要操作的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=readerpass";
+ 	 	document.searchForm.submit();
+		break;
+		
+	case "readernotpass": 
+        if(isSelect()==false) 
+	   {
+        alert("请选择要操作的论文!");
+        break;
+	   }	
+	    document.searchForm.action="editpaper.do?flag=readernotpass";
+ 	 	document.searchForm.submit();
+		break;
+    
+    case "readfee": 
+	   if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 
+        document.searchForm.action="editpaper.do?flag=readfee&type=1";
+ 	 	document.searchForm.submit();
+		break;
+		
+		case "tojointtrial": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		
+	 
+        document.searchForm.action="editpaper.do?flag=tojonittrial&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;	
+		
+		case "nojointtrial":  
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		
+	    
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+	 	 
+        document.searchForm.action="editpaper.do?flag=nojointtrial&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;	
+		
+    case "pass": 
+		if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }	
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+ 	 	 
+        document.searchForm.action="editpaper.do?flag=toread&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;
+				
+	 case "division": 
+		if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }	
+	    
+	    
+ 	 	        
+        document.searchForm.action="editpaper.do?flag=division";
+ 	 	document.searchForm.submit();
+		break;	
+		
+	case "tdivision": //推荐处理人<!-- sc20110427 -->
+		  if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		  
+        document.searchForm.action="editpaper.do?flag=div&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;
+		
+	 case "firstTrial": 
+		if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }	
+	     
+ 	 	       
+        document.searchForm.action="editpaper.do?flag=firstTrial";
+ 	 	document.searchForm.submit();
+		break;	
+								
+    case "reject": 
+		if(isSelect()==false)
+	   {
+        alert("请选择要送审的论文!");
+        break;
+	   }	
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+ 	 	 
+        document.searchForm.action="editpaper.do?flag=reject&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break; 		
+		
+    case "toviewread": 
+		if(isSelect()==false)
+	    { 
+        alert("请选择要要查看的论文!");
+        break;
+	   }		 
+	    a=0;  
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        document.searchForm.action="editpaper.do?flag=toviewread&pop=yes&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;
+		
+    case "toreadback": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        document.searchForm.action="editpaper.do?flag=toreadback";
+ 	 	document.searchForm.submit();
+		break;
+		
+	 case "first_toreadback": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        document.searchForm.action="editpaper.do?flag=first_toreadback";
+ 	 	document.searchForm.submit();
+		break;		
+								
+    case "tosetfee": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        document.searchForm.action="editpaper.do?flag=tosetfee";
+ 	 	document.searchForm.submit();
+		break;
+
+    case "hasten": 
+     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 	 
+	 	 
+        document.searchForm.action="toMail.do?flag=hasten";
+ 	 	document.searchForm.submit();
+		break;
+
+	case "readeditModify":
+		if(isSelect()==false)
+		{
+		alert("请选择一篇论文!");
+		break;
+		}
+			a=0;
+			for(i=0;i<document.forms[0].CHECKID.length;i++)
+			if(document.forms[0].CHECKID[i].checked==true)
+			a++;
+		if (a>1)
+		{alert("对不起，您只能选择一篇文章! ") ;
 			break;
+		}
+		document.searchForm.action="editpaper.do?flag=readeditModify";
+		document.searchForm.submit();
+		break
+
+	case "upModify":
+		if(isSelect()==false)
+		{
+		alert("请选择一篇论文!");
+		break;
+		}
+			a=0;
+			for(i=0;i<document.forms[0].CHECKID.length;i++)
+			if(document.forms[0].CHECKID[i].checked==true)
+			a++;
+		if (a>1)
+		{	alert("对不起，您只能选择一篇文章! ") ;
+			break;
+		}
+		document.searchForm.action="editpaper.do?flag=upModify";
+		document.searchForm.submit();
+		break
+
+	case "infoinput":
+		if(isSelect()==false){
+			alert("请选择一篇稿件! ");
+			break;
+		 }
+			a=0;
+			for(i=0;i<document.forms[0].CHECKID.length;i++)
+			if(document.forms[0].CHECKID[i].checked==true)
+			 a++;
+		 if (a>1)  	
+		{	alert("对不起，您只能选择一篇稿件! ") ;
+			break;  
+		}
+		 document.searchForm.action="editpaper.do?flag=infoinput&type=2";
+		document.searchForm.submit();	
+		 break;	
+
+	case "readedit":
+		if(isSelect()==false)
+		{
+			alert("请选择一篇论文!");
+			break;
+		}
+			a=0;
+			for(i=0;i<document.forms[0].CHECKID.length;i++)
+			if(document.forms[0].CHECKID[i].checked==true)
+			a++;
+		if (a>1)
+		{	alert("对不起，您只能选择一篇文章! ") ;
+			break;
+		}
+		document.searchForm.action="editpaper.do?flag=readedit";
+		document.searchForm.submit();
+		break
+
+	case "cheshen": 
+		     if(isSelect()==false)
+		   {
+	        alert("请选择一篇论文!");
+	        break;
+		   }			   	   
+		    a=0;
+	        for(i=0;i<document.forms[0].CHECKID.length;i++)
+	          if(document.forms[0].CHECKID[i].checked==true)
+	          a++;
+	        if (a>1)  	
+	        {alert("对不起，您只能选择一篇文章! ") ;
+	        	break;  
+	        }  	 	 
+		 	 
+	        document.searchForm.action="toMail.do?flag=cheshen";
+	 	 	document.searchForm.submit();
+			break;	
+			
+			
+	case "chiefRead1": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		
+	    
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+	 	 
+        document.searchForm.action="editpaper.do?flag=chiefread1&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;	
+
+	case "chiefRead": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		
+	    
+	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+	 	 
+        document.searchForm.action="editpaper.do?flag=chiefread&type="+document.searchForm.ARTICL_STATUS.value;
+ 	 	document.searchForm.submit();
+		break;	
+		
+    case "toluy": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }
+	       a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+ 	 	 		 	 
+        document.searchForm.action="toMail.do?flag=tonotice";
+ 	 	document.searchForm.submit();
+		break;
 	
 	
-	case "export3": 
-	     if(isSelect()==false)  
+	case "export":
+	
+	   if(isSelect()==false)
 	   {
         alert("您确定全部导出吗？");
-       }		 
-	    document.searchForm.action="feeExport.do?flag=export3";
+	   }
+	    document.searchForm.action="feeExport.do?flag=export";
  	 	document.searchForm.submit();
-		break; 
+		break;	
 		
+		
+	case "export1": 
+	   if(isSelect()==false)
+	   {
+        alert("您确定全部导出吗？");
+       }
+	    document.searchForm.action="feeExport.do?flag=export4";
+ 	 	document.searchForm.submit();
+		break;	
+	
 	
 	case "sendmail": 
 	    if(isSelect()==false)
@@ -727,10 +1309,352 @@ function doAction(actionID)
         {alert("对不起，您只能选择一篇文章! ") ;
         	break;  
         }  
+	    document.searchForm.action="toMail.do?flag=toreadmoney";
+ 	 	document.searchForm.submit();
+		break;
+		
+    
+	case "sendmail1": 
+	    if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	 		a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  
 	    document.searchForm.action="toMail.do?flag=tonotice1";
  	 	document.searchForm.submit();
-		break;					
+		break;				
+		
+	case "regread": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	 		a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  
+        document.searchForm.action="editpaper.do?flag=regread";
+ 	 	document.searchForm.submit();
+		break;		
+		
+    case "toreject": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	     a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+ 	 	 	  
+        document.searchForm.action="editpaper.do?flag=toreject";
+ 	 	document.searchForm.submit();
+		break;
+		
+    case "torejectnotice": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }	
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+ 	 	 
+        document.searchForm.action="toMail.do?flag=torejectnotice";
+ 	 	document.searchForm.submit();
+		break;
+
+  case "torejnotice": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }	
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+ 	 	 
+        document.searchForm.action="toMail.do?flag=torejnotice";
+ 	 	document.searchForm.submit();
+		break;
+
+   case "tochiefCheck": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+ 	 	  
+        document.searchForm.action="editpaper.do?flag=tochiefCheck";
+ 	 	document.searchForm.submit();
+		break;
+		
+    case "tonotice": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }
+	   		a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  
+ 	 	 
+        document.searchForm.action="toMail.do?flag=tonotice";
+ 	 	document.searchForm.submit();
+		break;
+
+   case "towantRead3": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }	
+	       a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 	 
+       if (confirm('确定将此稿件送三审？'))	
+    {
+        document.searchForm.action="editpaper.do?flag=towantRead3";
+ 	 	document.searchForm.submit();
+	}
+		 break;
+
+    case "togetpagefee": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	 		a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  
+        document.searchForm.action="editpaper.do?flag=togetpagefee";
+ 	 	document.searchForm.submit();
+		break;
+		
+ 	 case "formatpass": 
+ 	  	if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+	     
+	    //SHUCHAO20105265
+	    if(confirm("友情提示：    \n   你需要发邮件吗？ \n   点”确定“跳到发送邮件界面，在录用的同时可以向作者发送邮件，通知作者被录用。  \n   点”取消“不发送邮件，直接录用。"))
+	       document.searchForm.action="toMail.do?flag=formatpass";
+	    else
+	    { 
+	    if(confirm("你确定需要不发送邮件，直接录用吗？"))
+	     document.searchForm.action="toMail.do?flag=formatpass_nosendmail";
+	    }
+ 	 	document.searchForm.submit();
+ 	 	break;
+ 	
+ 	 case "anonymous_notice": 
+ 	  	if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+	    document.searchForm.action="toMail.do?flag=anonymous_notice";
+ 	 	document.searchForm.submit();
+ 	 	break;
+ 	 	
+ 	 case "formatnotice": 
+ 	  	if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+	    document.searchForm.action="toMail.do?flag=formatnotice";
+ 	 	document.searchForm.submit();
+ 	 	break;
+		
+    case "tomodifynotice": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        document.searchForm.action="toMail.do?flag=tomodifynotice";
+ 	 	document.searchForm.submit();
+		break;
+		
+    case "backtocheck": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   
+        document.searchForm.action="editpaper.do?flag=backtocheck";
+ 	 	document.searchForm.submit();
+		break;
+
+   case "uploadnotice": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        document.searchForm.action="toMail.do?flag=uploadnotice";
+ 	 	document.searchForm.submit();
+		break;
+		
+	case "refusenotice": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        if(confirm('确定将此稿件退稿吗？')){
+        document.searchForm.action="toMail.do?flag=refusenotice";
+ 	 	document.searchForm.submit();
+ 	 	}
+		break;
+	case "toformat": 
+	     if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+	   	    a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        }  	 	 
+        document.searchForm.action="editpaper.do?flag=toformat";
+ 	 	document.searchForm.submit();
+		break;
+
+	case "newTask":
+	  
+        var url = "openTask.do?PathID=new";
+			var NewWnd = window.open(url,'iFDMS','left=150,top=100,location=no,width=550,height=350","toolbar=no,memubar=no,scrollbars=yes,status=no,resizable=yes');  
+		if ((document.window != null) && (!NewWnd.opener))
+			   NewWnd.opener = document.window;
+			break;
 			
+	case "addRead": 
+ 	  	if(isSelect()==false)
+	   {
+        alert("请选择一篇论文!");
+        break;
+	   }		 
+ 	 	 	 a=0;
+        for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          a++;
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	break;  
+        } 
+	    document.searchForm.action="editpaper.do?flag=addRead";
+ 	 	document.searchForm.submit();
+ 	 	break;
   }
 }
 
@@ -747,11 +1671,10 @@ function GetDate (nText)          // <!--马英哲3.27 -->
 }
 
 function pageChange(ca)
-{
-	 
+{	 
     switch(ca)
 	{
-     case "1":
+      case "1":
 		 if((document.searchForm.CURRENT_PAGE.value)/1<2)
 		 return;
          document.searchForm.CURRENT_PAGE.value="1";
@@ -771,32 +1694,101 @@ function pageChange(ca)
 		 return;
          document.searchForm.CURRENT_PAGE.value=document.searchForm.TOTAL_PAGE.value;
 	     break;
-
 	}
     document.searchForm.BUTTON_FLAG.value="pagechange";
  	document.searchForm.submit();
 
 }
+
 function pageNumChange()
 {
      document.searchForm.BUTTON_FLAG.value="pagechange";
  	 document.searchForm.submit();
 }
+
 function viewPaper(str)
 {
-      var url="editpaper.do?flag=view&PAPERID="+str;
-      window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=no,scrollbars=yes,status=no,resizable=yes');
-      if ((document.window != null) && (!NewWnd.opener))
-      NewWnd.opener = document.window;
-}
-function viewPaper1(str)
-{
-      var url="editpaper.do?flag=view1&PAPERID="+str;
-      window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=no,scrollbars=yes,status=no,resizable=yes');
-      if ((document.window != null) && (!NewWnd.opener))
+        var url="editpaper.do?flag=view&PAPERID="+str;
+       window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=yes,scrollbars=yes,status=no,resizable=yes');
+       if ((document.window != null) && (!NewWnd.opener))
       NewWnd.opener = document.window;
 }
 
+function viewPaper1(str)
+{
+        var url="editpaper.do?flag=view1&PAPERID="+str;
+       window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=yes,scrollbars=yes,status=no,resizable=yes');
+       if ((document.window != null) && (!NewWnd.opener))
+      NewWnd.opener = document.window;
+}
+
+function viewRead(str,str1)
+{
+        var url="editpaper.do?flag=toviewread&paperNo="+str+"&status="+str1;
+       window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=yes,scrollbars=yes,status=no,resizable=yes');
+       if ((document.window != null) && (!NewWnd.opener))
+      NewWnd.opener = document.window;
+}
+
+function viewRead11(str,str1)
+{      
+        var url="editpaper.do?flag=toviewread11&paperNo="+str+"&status="+str1;
+       window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=yes,scrollbars=yes,status=no,resizable=yes');
+       if ((document.window != null) && (!NewWnd.opener))
+      NewWnd.opener = document.window;
+}
+
+function viewSelf()
+{
+	if(isSelect()==false)
+	   {
+        alert("请选择一篇文章！");
+        return;
+	   }		 	 
+		var a=0;
+		var id=0;
+         for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          {
+          a++;
+          id=document.forms[0].CHECKID[i].value;
+           
+          }
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	return;  
+        }  
+        var url="editpaper.do?flag=toviewread2&paperNo="+id;
+       window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=yes,scrollbars=yes,status=no,resizable=yes');
+       if ((document.window != null) && (!NewWnd.opener))
+      NewWnd.opener = document.window;
+} 
+
+function viewSelfModify()
+{
+	if(isSelect()==false)
+	   {
+        alert("请选择一篇文章！");
+        return;
+	   }		 	 
+		var a=0;
+		var id=0;
+         for(i=0;i<document.forms[0].CHECKID.length;i++)
+          if(document.forms[0].CHECKID[i].checked==true)
+          {
+          a++;
+          id=document.forms[0].CHECKID[i].value;
+           
+          }
+        if (a>1)  	
+        {alert("对不起，您只能选择一篇文章! ") ;
+        	return;  
+        }  
+        var url="editpaper.do?flag=toviewread&paperNo="+id+"&status=16";
+       window.open(url,'','left=100,top=30,location=no,width=700,height=500","toolbar=yes,memubar=yes,scrollbars=yes,status=no,resizable=yes');
+       if ((document.window != null) && (!NewWnd.opener))
+      NewWnd.opener = document.window;
+} 
 
 function checkALl()
 {
@@ -810,13 +1802,13 @@ function checkALl()
     document.searchForm.CHECKID[i].checked=document.searchForm.CHECKALL.checked;
  
 }
+
 function isSelect() 
 {
 	 if(document.searchForm.CHECKID.length==null){
 
        if(document.searchForm.CHECKID.checked==true)
        return true;
-
 	 }
 	 else
 	 for(i=0;i<document.searchForm.CHECKID.length;i++)
@@ -824,19 +1816,23 @@ function isSelect()
 	  if(document.searchForm.CHECKID[i].checked==true)
        return true;
 	}
-
-  return false
-
+  return false;
 }
 
 function viewUser(str)
 {
-      var url="../system/edituser.do?flag=view&USERID="+str;
-      window.open(url,'','left=100,top=30,location=no,width=600,height=400","toolbar=yes,memubar=no,scrollbars=yes,status=no,resizable=no');
-      if ((document.window != null) && (!NewWnd.opener))
+        var url="../system/edituser.do?flag=view&USERID="+str;
+       window.open(url,'','left=100,top=30,location=no,width=600,height=400","toolbar=yes,memubar=no,scrollbars=yes,status=no,resizable=no');
+       if ((document.window != null) && (!NewWnd.opener))
       NewWnd.opener = document.window;
-	 
 }
+
+
+
+
+
+
+
 
 
 </script>
