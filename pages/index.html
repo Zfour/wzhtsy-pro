@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+	
+	 
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="../dist/css/clock.css" rel="stylesheet">
+
+<!-- Bootstrap bootstrap-datetimepicker CSS -->
+<link href="../dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">设计艺术研究杂志投稿管理系统</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+               
+      
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 修改个人信息</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-lock fa-fw"></i> 修改密码</a>
+                        </li>
+                         <li><a href="#"><i class="fa fa-question fa-fw"></i> 帮助</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>注销</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="chs">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+ 
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                          <div id="clock">
+                           <p class="date"><i class="fa fa-calendar-o   fa-fw"></i>{{ date }}</p>
+                          <p class="time">{{ time }}</p>
+                         </div> 
+                       
+                        </li>
+                    
+                        <li>
+                            <a href="index.html" class="current" ><i class="fa fa-home fa-fw"></i>首页</a>
+                        </li>
+                          
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-file-text fa-fw  "></i> 编辑办公<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="#">稿件信息登记  <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="2110.html">作者邮件来稿登记</a>
+                                        </li>
+                                        <li>
+                                            <a href="2120.html">作者邮件改稿登记</a>
+                                        </li>
+                                        <li>
+                                            <a href="2130.html">离线通过稿登记</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                               
+                                <li>
+                                    <a href="#">值班审稿  <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li  >
+                                            <a class="quicka" href="2310.html">待初审稿件</a>
+                                        </li>
+                                        <li>
+                                            <a href="2320.html">初审结果管理</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                
+                               
+<!--
+<li>
+                                    <a href="#">送审管理（值班编辑/主管编辑） <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">改稿送审</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">补录送审信息（主编离线稿如约稿）*</a>
+                                        </li>
+                                    </ul>
+                                    
+</li>
+-->
+                                <li>
+                                    <a href="#">主编审稿管理  <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="2610.html">稿件终审</a>
+                                        </li>
+                                        <li>
+                                            <a href="2620.html">终审结果处理</a>
+                                        </li>               
+                                      
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                 <li>
+                                    <a href="#">稿费管理  <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="2410.html">未缴稿费稿件</a>
+                                        </li>
+										
+                                        <li>
+                                            <a href="2420.html">稿费收取历史</a>
+                                        </li>
+                                       
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li>
+                                    <a href="#">责编审稿管理  <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="2810.html">稿件内容格式审查</a>
+                                        </li>
+                                        
+                                       
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                
+                               <li>
+                                    <a href="#">稿件信息中心  <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                       
+                                        <li>
+                                            <a href="2920.html">审稿状态查询</a>
+                                        </li>
+                                        <li>
+                                            <a href="2930.html">审稿信息查询</a>
+                                        </li>
+                                         <li>
+                                            <a href="2940.html">信息提示与回复</a>
+                                        </li>
+                                
+                                        
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li> 
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                   
+                        <li>
+                            <a href="#"><i class="fa fa-th-list fa-fw"></i> 组版排版管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a class="jq-load" href="3110.html">期刊信息管理</a>
+                                </li>
+                                <li>
+                                    <a class="jq-load" href="3120.html">目录组版管理</a>
+                                </li>
+                            </ul>
+                           
+                        </li>
+                       <!-- <li>
+                            <a href="#"><i class="fa fa-book fa-fw"></i> 排版管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a class="jq-load" href="flot.html">下载排版</a>
+                                </li>
+                                <li>
+                                    <a class="jq-load" href="morris.html">排版信息管理</a>
+                                </li>
+                                
+                            </ul>
+                           
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-pencil-square-o fa-fw"></i> 编校管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="#">送校管理 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">送一校</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">送多校</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">送作者校</a>
+                                        </li>
+                                    </ul>
+                                    
+                                </li>
+                                <li>
+                                    <a href="#">校对管理 <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">编辑校对</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">校对结果</a>
+                                        </li>
+                                       
+                                    </ul>
+                                   
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bookmark  fa-fw"></i> 出版管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="#">出版状态查询 </a>
+                                   
+                                </li>
+                                <li>
+                                    <a href="#">已出版稿件审稿信息</a>
+                                    
+                                </li>
+                            </ul>
+                           
+                        </li>-->
+						
+                         <li>
+                            <a href="#"><i class="fa fa-puzzle-piece  fa-fw"></i> 首页管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li>
+                                    <a href="#">新闻信息管理 </a>
+                                   
+                                </li>
+                                <li>
+                                    <a href="#">期刊信息管理</a>
+                                    
+                                </li>
+                                  <li>
+                                    <a href="#">经典导读信息管理</a>
+                                    
+                                </li>
+                                   <li>
+                                    <a href="#">友情链接管理</a>
+                                    
+                                </li>                                  
+ <li>
+                                    <a href="#">下载中心管理</a>
+                                    
+                                </li>
+                                <li>
+                                    <a href="#">广告管理</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+<section id="content">
+     <div id="container">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+				
+                    <h1 class="page-header">首页</h1>
+                </div>
+              
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-envelope-o   fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">1</div>
+                                    <div>待处理来稿</div>
+                                </div>
+                            </div>
+                        </div>
+						
+                        <a href="index&lg.html" >
+                            <div class="panel-footer">
+                                <span class="pull-left "  >  查看详情  </span>
+								
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+						<script type="text/javascript">
+ 
+</script>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa  fa-inbox     fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">1</div>
+                                    <div>未终审稿件</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="quickclick2"  >
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详情</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-rmb    fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">1</div>
+                                    <div>待缴费稿件</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="quickclick3"  >
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详情</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">1</div>
+                                    <div>格式未通过稿件</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="quickclick4"  >
+                            <div class="panel-footer">
+                                <span class="pull-left">查看详情</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+					
+                </div>
+            </div>
+			
+			 <div style="margin-top: 500px;padding-bottom:40px">
+            技术支持 <a href="http://wutinfo.whut.edu.cn/" target="_blank" title="武汉理工大学信息工程学院">武汉理工大学信息工程学院</a> - Made by <a href="http://zfe.space" title="网页模板" target="_blank">Z_4</a></div>
+        </div>
+ </div>
+    </section>
+            <!-- /.row -->
+          
+        <!-- /#page-wrapper -->
+ 
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../dist/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../dist/js/jq-load.js" charset="utf-8"></script>
+   
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <!--图表控件
+	<script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+-->
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    
+
+     <script type="text/javascript" src="../dist/js/vue.min.js" charset="utf-8"></script>
+            
+ <script type="text/javascript" src="../dist/js/clock.js" charset="utf-8"></script>
+  
+   <script type="text/javascript" src="../dist/js/jquery.media.js" charset="utf-8"></script> 
+   
+   <script type="text/javascript" src="../dist/js/bootstrap-datetimepicker.js" charset="utf-8"></script> 
+   <script type="text/javascript" src="../dist/js/bootstrap-datetimepicker.zh-CN.js" charset="utf-8"></script> 
+ 
+ 
+
+
+</body>
+
+</html>
